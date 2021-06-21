@@ -55,6 +55,8 @@ get_complete_authors = function(id, pubid, delay = .4, initials = TRUE)
   }
 
   if (initials) {
+    # Replace 'é' with 'e'
+    auths <- sub("\xe9", "e", auths)
     auths = sapply(auths, format_authors)
   }
 
